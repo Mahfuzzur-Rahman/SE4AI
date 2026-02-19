@@ -1,0 +1,17 @@
+version: "2"
+agents:
+  root:
+    model: anthropic/claude-sonnet-4-6
+    description: "Director"
+    instruction: "Analyze the task. Delegate the UI to 'frontend' and logic to 'backend'. Review their work before finishing."
+    sub_agents: [frontend, backend]
+  frontend:
+    model: anthropic/claude-sonnet-4-6
+    instruction: "Implement React/UI components."
+    toolsets: [- type: filesystem]
+  backend:
+    model: anthropic/claude-sonnet-4-6
+    instruction: "Implement FastAPI/Database logic."
+    toolsets:
+    - type: filesystem
+    - type: shell

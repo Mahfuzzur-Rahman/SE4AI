@@ -1,0 +1,14 @@
+version: "2"
+agents:
+  root:
+    model: anthropic/claude-sonnet-4-6
+    description: "Peer Coordinator"
+    instruction: "You are a peer. Work with 'other_peer' to reach a consensus on the implementation. No one is the boss."
+    sub_agents: [other_peer]
+    toolsets: [- type: filesystem, - type: shell]
+  other_peer:
+    model: anthropic/claude-sonnet-4-6
+    instruction: "Collaborate with the root peer. Share files and reach a joint solution."
+    toolsets:
+    - type: filesystem
+    - type: shell

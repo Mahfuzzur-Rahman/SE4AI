@@ -1,0 +1,14 @@
+version: "2"
+agents:
+  root:
+    model: anthropic/claude-sonnet-4-6
+    description: "Gatekeeper"
+    instruction: "Delegate the task to the 'dev_team'. They will work together, but you must strictly review their PR before it is considered done."
+    sub_agents: [dev_team]
+  dev_team:
+    model: anthropic/claude-sonnet-4-6
+    instruction: "Work as a peer group to solve the task. Submit your final result to the Gatekeeper."
+    sub_agents: [frontend, backend]
+    toolsets:
+    - type: filesystem
+    - type: shell

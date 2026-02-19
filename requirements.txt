@@ -1,0 +1,15 @@
+# --- Core Orchestration Framework ---
+langchain-anthropic>=0.3.0
+langgraph>=0.2.0
+langchain>=0.3.0
+
+# --- Environment & Configuration ---
+python-dotenv>=1.0.1
+pyyaml>=6.0.1
+
+# --- Data Handling & Evaluation ---
+pandas>=2.2.0
+numpy>=1.26.0
+
+# --- Cagent Tooling (Managed via Homebrew/CLI, but Python libs help) ---
+anthropic>=0.45.0

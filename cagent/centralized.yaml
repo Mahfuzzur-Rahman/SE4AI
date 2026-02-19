@@ -1,0 +1,9 @@
+version: "2"
+agents:
+  root:
+    model: anthropic/claude-sonnet-4-6
+    description: "Centralized Manager"
+    instruction: "You are a solo expert. Complete the task entirely by yourself. Use your tools to read, write, and verify code."
+    toolsets:
+    - type: filesystem
+    - type: shell

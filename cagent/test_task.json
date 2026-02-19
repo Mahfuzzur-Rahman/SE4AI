@@ -1,0 +1,6 @@
+{
+  "id": "CHURN_001",
+  "instruction": "Implement a 'User Churn Risk' dashboard. 1. Create a React component 'ChurnChart.tsx'. 2. Add a FastAPI endpoint '/api/churn-data' that calculates risk from the 'users' table in Postgres. 3. Update the main dashboard to display this chart.",
+  "category": "FullStack",
+  "difficulty": "Hard"
+}
